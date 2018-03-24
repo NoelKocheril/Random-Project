@@ -1,10 +1,7 @@
 package practice;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 /*
 Given a list of numbers, return whether any two sums to k.
@@ -16,19 +13,17 @@ public class Sum2 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		
-		//Get Set
+		//Get List
 		System.out.println("Format for List: N N N N N N... where N can be any Integer (Space Seperated)");
 		System.out.print("Enter List: ");
 		String[] in_Set = in.nextLine().split(" ");
 		
-		//Make Set
+		//Make List
 		ArrayList<Integer> Numbers = new ArrayList<Integer>();
 		for(String e:in_Set) {
 			Numbers.add(Integer.parseInt(e));
 		}
 		System.out.println(Numbers);
-		
-		
 		
 		//Get Step you want to Reach
 		System.out.print("Enter Sum you Wish to Reach: ");
@@ -46,6 +41,7 @@ public class Sum2 {
 		t2 = System.nanoTime();
 		System.out.printf("checkSumFast with %s \nand Sum: %d completes in %d NanoSeconds\n", Numbers, sum, t2-t1);
 		System.out.println(out);
+		in.close();
 	}
 	
 	public static boolean checkSumSlow(ArrayList<Integer> arr, int sum) {
